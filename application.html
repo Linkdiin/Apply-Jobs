@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Classy Job Application Form</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            width: 80%;
+            margin: auto;
+            background: white;
+            padding: 20px 20px 20px 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            margin-top: 50px;
+        }
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+        label {
+            display: block;
+            margin: 10px 0 5px;
+        }
+        input, select {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        button {
+            background-color: #007BFF;
+            color: white;
+            padding: 10px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            width: 100%;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Job Application Form</h1>
+        <form>
+            <label for="name">Name *</label>
+            <input type="text" id="name" name="name" required>
+
+            <label for="email">Email *</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="phone">Phone *</label>
+            <input type="tel" id="phone" name="phone" required>
+
+            <label for="country">Country *</label>
+            <select id="country" name="country" required>
+                <option value="">Select country</option>
+                <option value="USA">USA</option>
+                <option value="Canada">India</option>
+                <option value="UK">UK</option>
+                <option value="Australia">Bangladesh</option>
+                <!-- Add more countries as needed -->
+            </select>
+
+            <label for="position">What Position Are You Applying For? *</label>
+            <select id="position" name="position" required>
+                <option value="Job1">Graphics Designer</option>
+                <option value="Job2">Content Writer</option>
+                <option value="Job3">Vedio Editor</option>
+                <!-- Add more jobs as needed -->
+            </select>
+
+            <label for="employment-status">What Is Your Current Employment Status? *</label>
+            <select id="employment-status" name="employment-status" required>
+                <option value="Employed">Employed</option>
+                <option value="Self-Employed">Self-Employed</option>
+                <option value="Unemployed">Unemployed</option>
+                <option value="Student">Student</option>
+            </select>
+
+            <label for="resume">Upload Your Resume</label>
+            <input type="file" id="resume" name="resume">
+
+            <button type="submit">Send</button>
+        </form>
+    </div>
+</body>
+</html>
